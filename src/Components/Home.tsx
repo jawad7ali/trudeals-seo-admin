@@ -164,12 +164,14 @@ const Home: FC<{}> = (): JSX.Element => {
               name="deal"
               onFinish={onFinish}
               autoComplete="off"
+              key={JSON.stringify(formInitialValues)}
             >
               <div className="form-group">
                 <label htmlFor="dealName">Deal Name</label>
                 <Form.Item
                   name="title"
                   id="title"
+                  shouldUpdate={true}
                   rules={[{ required: true, message: 'Please input your dealName!' }]}
                 >
                   <Input placeholder="dealName" value={editDeal.title} />
